@@ -1,6 +1,5 @@
 'use strict';
-
-class Api {
+export default class Api {
 	constructor (options, user, job){
 		this.options = options;
 		this.user = user;

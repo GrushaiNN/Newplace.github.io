@@ -1,6 +1,13 @@
 'use strict';
+import Card from './Card.js';
+import Api from './Api.js';
+import CardList from './CardList.js';
+import FormValidator from './FormValidator.js';
+import Popup from './Popup.js';
+import UserInfo from './UserInfo.js';
+import './pages/index.css';
+
 (function(){
-//import Card from './Card.js';
 // переменные
 const userName = document.querySelector(".user-info__name");
 const userJob = document.querySelector(".user-info__job");
