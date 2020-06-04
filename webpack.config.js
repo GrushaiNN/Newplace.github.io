@@ -33,18 +33,31 @@ module.exports = {
             },
             {
               test: /\.(png|jpg|gif|ico|svg)$/,
-              use: [
+              loader: 'file-loader',
+              options: {
+                  loader: 'image-webpack-loader',
+                  name: '[path][name].[ext]',
+                  outputPath: 'images',
+                              }
+              /*use: [
                       'file-loader?name=./src/images/[name].[ext]', // указали папку, куда складывать изображения
                       {
                               loader: 'image-webpack-loader',
-                              options: {}
+                              options: {
+                                name: '[name].[ext]',
+                                outputPath: 'images',
+                              }
                       },
-              ]
+              ]*/
        },
        {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./src/vendor/[name].[ext]'
-    }
+        loader: 'file-loader',
+        options: {
+                  name: '[name].[ext]',
+                  outputPath: 'vendor',
+                              }
+        }
           ]
       },
     plugins: [
@@ -64,7 +77,7 @@ module.exports = {
 }),
   new WebpackMd5Hash(),
   new webpack.DefinePlugin({
-    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    'NODE_ENV': JSON.stringify('NODE_ENV')
 }),
 new CopyPlugin({
   patterns: [
