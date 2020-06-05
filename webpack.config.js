@@ -32,7 +32,7 @@ module.exports = {
             },
             {
               test: /\.(png|jpg|gif|ico|svg)$/,
-              loader: 'file-loader',
+              loader: 'file-loader?name',
               options: {
                   name: '[path][name].[ext]',
                   outputPath: 'images',
@@ -40,7 +40,7 @@ module.exports = {
        },
        {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader',
+        loader: 'file-loader?name',
         options: {
                   name: '[name].[ext]',
                   outputPath: 'vendor',
@@ -65,7 +65,7 @@ module.exports = {
 }),
   new WebpackMd5Hash(),
   new webpack.DefinePlugin({
-    'NODE_ENV': JSON.stringify('production')
-}),
+    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+})
   ]
 }

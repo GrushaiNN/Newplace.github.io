@@ -26,6 +26,7 @@ const popupImg = document.querySelector('.popup_img');
 const popupStyle = document.querySelector('.popup__content_img');
 const user = document.querySelector('.popup__input_type_user');
 const job = document.querySelector('.popup__input_type_job');
+let baseUrlValue;
 
 // увеличиваем картинку
 cardPlaces.addEventListener('click', function(event) {
@@ -45,11 +46,22 @@ const cardList = new CardList (document.querySelector('.places-list'), card);
 
 // обработки запросов
 
-const api = new Api ({
-  baseUrl: 'https://praktikum.tk/cohort10',
+
+
+
+if (process.env.NODE_ENV === 'development'){
+  baseUrlValue = 'http://praktikum.tk/cohort10';
+} else {
+  baseUrlValue = 'https://praktikum.tk/cohort10';
+}
+
+const api = new Api (
+{
+  baseUrl: `${baseUrlValue}`,
   headers: {
     authorization: '1887ef77-ec54-4624-95c5-915a884a09c4',
-  }
+  } 
+
 }, userName, userJob);
 
     // загрузка данных о пользователе

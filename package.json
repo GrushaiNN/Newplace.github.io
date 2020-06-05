@@ -1,6 +1,6 @@
 {
   "name": "newplace",
-  "homepage": "https://newplace.github.io/",
+  "homepage": "https://github.com/GrushaiNN/Newplace.github.io#readme",
   "version": "0.0.1",
   "description": "Учебный проект на тему освоения сборщика Webpack",
   "main": "Api.js",
@@ -18,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/GrushaiNN/Newplace.github.io/issues"
   },
-  "homepage": "https://github.com/GrushaiNN/Newplace.github.io#readme",
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
