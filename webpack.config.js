@@ -32,11 +32,22 @@ module.exports = {
             },
             {
               test: /\.(png|jpg|gif|ico|svg)$/,
-              loader: 'file-loader?name',
+              use: [
+               {
+              loader: 'file-loader',
               options: {
                   name: '[path][name].[ext]',
                   outputPath: 'images',
                               }
+                    },
+                    {
+              loader: 'image-webpack-loader',
+              options: {
+                  name: '[path][name].[ext]',
+                  outputPath: 'images',
+                              }
+                    }
+                   ]
        },
        {
         test: /\.(eot|ttf|woff|woff2)$/,
