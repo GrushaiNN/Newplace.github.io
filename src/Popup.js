@@ -1,7 +1,7 @@
 'use strict';
 
 
-class Popup {
+export default class Popup {
     constructor(popupElement) {
       this.popupElement = popupElement;
       this.open = this.open.bind(this);
